@@ -12,17 +12,17 @@ Steps:
 
 Expected: The personalised quote journey opens with "My family" carried forward, and no text on Home says "the homepage gets you" or explains where website content is placed.
 
-## Test 2 - Premium mobile navigation reaches every primary destination
+## Test 2 - Mobile hamburger menu reaches every primary destination
 Viewport: mobile
-Covers: persistent primary navigation, Home, Funeral Cover, Funeral Services, Churches, About, Contact, route reliability
-Description: Verifies primary destinations are visible without opening a hamburger menu and each route opens its intended page.
+Covers: hamburger navigation, Home, Funeral Cover, Funeral Services, Churches, About, Contact, route reliability
+Description: Verifies the premium mobile menu opens cleanly, exposes every primary destination and closes after navigation.
 
 Steps:
-1. Use the visible top navigation strip to open Funeral Cover, Services and Churches
-2. Continue to About and Contact
-3. Use Home to return to the landing page
+1. Open the hamburger menu and navigate to Funeral Cover
+2. Reopen the hamburger menu and navigate through Funeral Services, For Churches, About and Contact
+3. Reopen the menu and use Home to return to the landing page
 
-Expected: Every destination renders its matching page heading and Home returns to the conversion landing page without a broken or stale route.
+Expected: Every destination renders its matching page heading, the menu closes after each navigation, and Home returns to the conversion landing page.
 
 ## Test 3 - Legal information is complete inside the replacement
 Viewport: desktop
