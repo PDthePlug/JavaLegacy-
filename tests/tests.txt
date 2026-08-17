@@ -1,0 +1,61 @@
+# Tests
+
+## Test 1 - Preserve the full funeral-cover quote journey [sanity]
+Viewport: mobile
+Covers: PWA packaging regression, funeral-cover quote workflow, standalone-ready customer experience
+Description: Verifies PWA packaging does not alter the accepted primary customer acquisition journey.
+
+Steps:
+1. Click "Get Cover" in the mobile sticky bar
+2. Select "My family" and continue through age, member count, cover and contact details with valid values
+3. Continue to the review step
+
+Expected: The complete funeral-cover review remains visible and the WhatsApp handoff action is available.
+
+## Test 2 - Preserve immediate bereavement help
+Viewport: mobile
+Covers: PWA packaging regression, urgent funeral assistance, mobile review experience
+Description: Verifies an installed-style mobile experience still prioritises urgent human assistance.
+
+Steps:
+1. Use the fixed "Need help now" action
+2. Select or verify "A loved one has passed away"
+3. Inspect immediate contact actions
+
+Expected: "Call 082 349 1001" and "WhatsApp now" remain available before any required form fields.
+
+## Test 3 - Verify PWA install metadata is exposed
+Viewport: desktop
+Covers: web app manifest, Java Legacy app identity, standalone PWA packaging
+Description: Verifies the deployed document exposes PWA metadata without changing the visible website experience.
+
+Steps:
+1. Load the Java Legacy home page
+2. Inspect the document metadata for the web app manifest and theme colour
+3. Continue browsing the visible homepage
+
+Expected: A manifest is linked, the theme colour is present, and the Java Legacy homepage remains usable with no install-specific obstruction over the customer experience.
+
+## Test 4 - Preserve church partnership acquisition
+Viewport: desktop
+Covers: PWA packaging regression, church partnership workflow
+Description: Verifies the PWA conversion does not break the institutional acquisition journey.
+
+Steps:
+1. Navigate to "For Churches"
+2. Click "Discuss a partnership"
+3. Inspect the organisation step
+
+Expected: The separate Church & community partnership enquiry opens and its required organisation fields remain available.
+
+## Test 5 - Preserve launch legal and contact routes
+Viewport: desktop
+Covers: production-hardening regression, contact architecture, legal destinations
+Description: Verifies PWA packaging preserves launch-critical contact and legal routes.
+
+Steps:
+1. Navigate to "Contact Java for what you actually need"
+2. Inspect funeral assistance, WhatsApp and office contact routes
+3. Inspect the footer legal links
+
+Expected: The contact routes remain distinct and Terms & Conditions plus Privacy Policy remain actionable.
