@@ -1,61 +1,61 @@
 # Tests
 
-## Test 1 - Home converts directly from family choice [sanity]
+## Test 1 - Mobile Home converts cleanly into the family quote [sanity]
 Viewport: mobile
-Covers: conversion-first homepage, family cover chooser, quote entry, customer-facing copy
-Description: Verifies Home presents the family-protection choice prominently without explaining the website's design intent.
+Covers: conversion-first Home, compact mobile hero, family chooser, quote modal, mobile sticky actions
+Description: Verifies the primary mobile journey reaches the family chooser without UI obstruction and opens the accepted quote experience.
 
 Steps:
 1. Load Home and scroll to "Who needs cover?"
-2. Confirm "Just me", "Me + partner", "My family" and "Extended family" are visible
-3. Select "My family"
+2. Select "My family"
+3. Inspect the open quote dialog and then close it
 
-Expected: The personalised quote journey opens with "My family" carried forward, and no text on Home says "the homepage gets you" or explains where website content is placed.
+Expected: The quote opens with "Cover for: My family", the dialog fits within the mobile viewport, and the bottom "Need help now / Get Cover" actions are hidden while the dialog is open and return after it closes.
 
-## Test 2 - Mobile hamburger menu reaches every primary destination
+## Test 2 - Hamburger navigation is unobstructed across restored destinations
 Viewport: mobile
-Covers: hamburger navigation, Home, Funeral Cover, Funeral Services, Churches, About, Contact, route reliability
-Description: Verifies the premium mobile menu opens cleanly, exposes every primary destination and closes after navigation.
+Covers: sticky utility/header, hamburger menu, Team, Gallery, Enquiries, Contact, overlay behavior
+Description: Verifies the premium mobile menu remains usable after scrolling and is not covered by the persistent bottom actions.
 
 Steps:
-1. Open the hamburger menu and navigate to Funeral Cover
-2. Reopen the hamburger menu and navigate through Funeral Services, For Churches, About and Contact
-3. Reopen the menu and use Home to return to the landing page
+1. Scroll Home, open the hamburger menu and navigate to Our Team
+2. Reopen the hamburger and navigate to Gallery and Enquiries
+3. Reopen it and navigate to Contact
 
-Expected: Every destination renders its matching page heading, the menu closes after each navigation, and Home returns to the conversion landing page.
+Expected: The menu begins directly beneath the sticky Java header, the bottom conversion bar does not cover the open menu, each destination renders correctly, and the menu closes after navigation.
 
-## Test 3 - Legal information is complete inside the replacement
+## Test 3 - Quote and assistance dialogs preserve usable progress and guardrails
 Viewport: desktop
-Covers: internal Terms & Conditions, internal Privacy Policy, no old-site redirects, legal completeness guardrail
-Description: Verifies customers can read substantive legal information without being sent to the previous Java Legacy website.
+Covers: quote dialog progress, modal keyboard-ready structure, disabled selection guardrail, funeral assistance progress
+Description: Verifies the production modal layer clearly communicates progress and prevents moving forward before a required choice is made.
 
 Steps:
-1. Open Terms & Conditions from the footer and inspect the full page
-2. Open Privacy Policy from the footer and inspect the full page
-3. Inspect both pages for any action that opens javalegacyfunerals.co.za/terms or javalegacyfunerals.co.za/privacy
+1. Open Get a Quote with no family selection
+2. Confirm Continue is disabled, then choose "Just me" and continue
+3. Close the quote, open funeral assistance and inspect its step indicator
 
-Expected: Terms includes product, quotation, waiting-period, service, privacy, complaints and governing-law sections; Privacy includes collection, purpose, sharing, retention, security and rights sections; neither page contains an old-site redirect action.
+Expected: The quote shows "Step 1 of 5", Continue is unavailable until a family choice is selected, and funeral assistance visibly shows "Step 1 of 4" with immediate-help actions available for a death.
 
-## Test 4 - Customer information routes and urgent assistance work end to end
+## Test 4 - Core commercial journeys remain independent
 Viewport: desktop
-Covers: About route, Cover Questions route, Contact route, urgent funeral assistance, footer route reliability
-Description: Verifies informational destinations and urgent family support remain operational after the navigation and legal refactor.
+Covers: Funeral Cover, funeral assistance, Church Partnership, WhatsApp handoffs, route separation
+Description: Verifies UX hardening does not merge or break Java's three commercial customer journeys.
 
 Steps:
-1. Open About from the top navigation and inspect the Java trust information
-2. Open Cover Questions and Contact from footer navigation
-3. From Contact, verify the funeral assistance number and WhatsApp/general contact options
+1. From Funeral Cover start the personalised quote
+2. From Funeral Services choose "A loved one has passed away"
+3. From Churches open "Discuss a partnership"
 
-Expected: About, Cover Questions and Contact each render the intended content, and funeral assistance remains clearly separated from a new-cover enquiry.
+Expected: Each action opens its own correct workflow; bereavement assistance exposes call/WhatsApp help immediately, while cover and church enquiries remain separate.
 
-## Test 5 - Commercial journeys remain independent and functional
+## Test 5 - Information, trust and legal routes remain complete
 Viewport: desktop
-Covers: funeral-cover quote, funeral-service request, church partnership enquiry, conversion separation
-Description: Verifies the corrective pass does not break the three accepted commercial journeys.
+Covers: About, Team, Gallery, Enquiries, Contact, Terms, Privacy, internal navigation regression
+Description: Verifies the production-readiness pass preserves the full replacement-site information architecture.
 
 Steps:
-1. From Funeral Cover, start a quote and continue through the family selection into the guided flow
-2. From Funeral Services, choose "A loved one has passed away" and inspect immediate help
-3. From Churches, open "Discuss a partnership"
+1. Visit About, Our Team, Gallery and Enquiries
+2. Open Contact and inspect phone, WhatsApp and email routes
+3. Open Terms & Conditions and Privacy Policy from the footer
 
-Expected: The funeral-cover quote, funeral-assistance journey and church partnership enquiry each open their own correct workflow, with immediate call/WhatsApp help shown for a bereaved family.
+Expected: Every destination renders its developed page, Contact keeps urgent assistance separate from new cover, and both legal pages remain complete inside the Java replacement without redirecting to the old site.
